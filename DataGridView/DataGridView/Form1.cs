@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
-namespace WindowsFormsApp12
+namespace DataGridView
 {
     public partial class Form1 : Form
     {
-        public string CmdText = "SELECT * FROM [table]";
-        public string ConnString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\Users\\vanya\\OneDrive\\Рабочий стол\\rofl1.mdb.accdb";
+        public string CmdText = "SELECT * FROM [Сотрудники]";
+        public string ConnString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = E:\\БД\\Третьяков БД.mdb.accdb";
         public Form1()
-        { 
+        {
             InitializeComponent();
             OleDbDataAdapter dataAdapter = new OleDbDataAdapter(CmdText, ConnString);
             DataSet ds = new DataSet();
-            dataAdapter.Fill(ds, "[table]");
+            dataAdapter.Fill(ds, "[Сотрудники]");
             dataGridView1.DataSource = ds.Tables[0].DefaultView;
 
         }
